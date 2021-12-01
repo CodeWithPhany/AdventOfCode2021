@@ -10,18 +10,14 @@ let currentNum = 0;
 let noChange = 0;
 console.log();
 
-for (let num = 0; num < input.length; num++) {
-  currentNum = (input[num] + input[num + 1] + input[num + 2]) / 3;
-
+for (let num of input) {
+  currentNum = num;
   if (previousNum === 0) console.log(num + " (N/A - no previous measurement)");
   else {
     currentNum - previousNum > 0
       ? console.log(num + "(increased)")
       : console.log(num + "(decreased)");
-    if (currentNum - previousNum === 0) {
-      console.log(num + "(no change)");
-      noChange++;
-    }
+    if (currentNum - previousNum === 0) console.log(num + "(no change)");
     currentNum - previousNum > 0 ? increased++ : decreased++;
   }
   previousNum = currentNum;
@@ -32,6 +28,6 @@ console.log(
     increased +
     "\nDecreased:" +
     decreased +
-    "\nNo Change: " +
+    "\nNo change:" +
     noChange
 );
