@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const text = fs.readFileSync("./input.txt") + "";
+const text = fs.readFileSync("./inputs.txt") + "";
 let input = text.split("\n").map(Number);
 
 let increased = 0;
@@ -15,16 +15,14 @@ for (let num = 0; num < input.length; num++) {
 
   if (previousNum === 0) console.log(num + " (N/A - no previous measurement)");
   else {
-    if (currentNum - previousNum > 0) {
-      increased++;
-      console.log(num + "(increased)");
-    } else if (currentNum - previousNum < 0) {
-      decreased++;
-      console.log(num + "(decreased)");
-    } else {
+    currentNum - previousNum > 0
+      ? console.log(num + "(increased)")
+      : console.log(num + "(decreased)");
+    if (currentNum - previousNum === 0) {
       console.log(num + "(no change)");
       noChange++;
     }
+    currentNum - previousNum > 0 ? increased++ : decreased++;
   }
   previousNum = currentNum;
 }
@@ -32,7 +30,7 @@ for (let num = 0; num < input.length; num++) {
 console.log(
   "\nIncreased: " +
     increased +
-    "\nDecrddeased:" +
+    "\nDecreased:" +
     decreased +
     "\nNo Change: " +
     noChange
