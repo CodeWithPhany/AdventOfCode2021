@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const text = fs.readFileSync("./inputs.txt") + "";
+const text = fs.readFileSync("./input.txt") + "";
 let input = text.split("\n").map(Number);
 
 let increased = 0;
