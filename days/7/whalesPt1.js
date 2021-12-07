@@ -1,21 +1,16 @@
 const { readFileSync } = require('fs')
 const path = require('path')
-const { performance } = require('perf_hooks')
-
-
 
 // Read input file
-// Split by comma
 const inputFilePath = path.join(__dirname, 'input.txt')
 const input = readFileSync(inputFilePath, 'utf8')
   .trim() // remove final newline
-  .split(',')
+  .split(',')// Split by comma
 
   // Parse into number
   .map(string => +string)
 
 // Part 1
-
 const getFuelUsage = (numbers, position) => {
   let fuelUsage = 0
   for (const n of numbers) {
@@ -32,7 +27,7 @@ const getLowestFuelUsage = (numbers, getFuelUsage) => {
   }
   return Math.min(...allFuelUsage)
 }
-
+// part 1 console.log
 console.log(`Part 1: ${getLowestFuelUsage(input, getFuelUsage)}`)
 
 
