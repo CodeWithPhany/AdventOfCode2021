@@ -4,7 +4,6 @@ const assert = require('assert')
 
 const data = fs.readFileSync(path.resolve(__dirname, 'input.txt'), 'utf8').split(',')
 
-
 // Part 2
 function part2(sequence) {
   let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
