@@ -5,6 +5,8 @@ const lines = fs.readFileSync(dataPath, 'utf-8')
   .trim()
   .split('\n')
 
+
+  //objects
 const lengthBasedClassifiers = {
   2: [1],
   3: [7],
@@ -14,6 +16,7 @@ const lengthBasedClassifiers = {
   7: [8],
 }
 
+// array
 const arrayOfLetterPositions = [
   'abcefg', // 0
   'cf',     // 1
@@ -56,6 +59,7 @@ const maskChars = (aString, bString, invert) => {
   return intersectSets(a, b, invert).join('')
 }
 
+// messy
 const groupCombinationsByLengths = (combinations) => {
   const lengthGroups = {}
   Object.entries(lengthBasedClassifiers).forEach(([
