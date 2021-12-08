@@ -2,18 +2,15 @@ const { readFileSync } = require('fs')
 const path = require('path')
 
 // Read input file
-// Split by comma
 const inputFilePath = path.join(__dirname, 'input.txt')
 const input = readFileSync(inputFilePath, 'utf8')
   .trim() // remove final newline
-  .split(',')
+  .split(',')// Split by comma
 
   // Parse into number
   .map(string => +string)
 
-
 //part 2
-
 const getFuelUsagePart2 = (numbers, position) => {
   let fuelUsage = 0
   for (const n of numbers) {
@@ -31,6 +28,5 @@ const getLowestFuelUsage = (numbers, getFuelUsage) => {
   }
   return Math.min(...allFuelUsage)
 }
-
 // Part 2 console log
 console.log(`Part 2: ${getLowestFuelUsage(input, getFuelUsagePart2)}`)
