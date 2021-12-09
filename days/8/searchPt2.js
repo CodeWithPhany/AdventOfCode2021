@@ -106,18 +106,7 @@ const groupCombinationsByLengths = (combinations) => {
     ],
     true
   )[0];
-  // Do I need this? maybe next segment.
-  // const segmentMap = {}
-  // segmentMap.e = maskChars(
-  //   characters[0],
-  //   characters[9],
-  //   true
-  // )
-  // segmentMap.a = maskChars(
-  //   characters[7],
-  //   characters[1],
-  //   true
-  // )
+  
   const combinationMap = {}
   Object.entries(characters).forEach(([
     digit,
