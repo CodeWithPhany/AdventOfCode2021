@@ -42,8 +42,7 @@ async function processLineByLine() {
     input: fileStream,
     crlfDelay: Infinity
   });
-  // Note: we use the crlfDelay option to recognize all instances of CR LF
-  // ('\r\n') in input.txt as a single line break.
+ 
   let edges = new Map();
 
   let gridDimensions = { x: 0, y: 0 };
